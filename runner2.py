@@ -47,7 +47,7 @@ simpla_cfg = 'simpla.cfg.xml'
 sumo_cmd = [
     sumolib.checkBinary(binary),
     '-c', sumo_cfg,
-    '--step-length', '0.1',
+    '--step-length', '0.5',
     '--fcd-output', 'fcd.xml',
     '--fcd-output.max-leader-distance', '100',
     '--xml-validation.routes', 'never',    # 忽略 routes XSD 校验以支持 Simpla 扩展属性
