@@ -1,0 +1,21 @@
+0%
+number of car :19464
+avg_time : 233.79s
+avg_speed : 22.54m/s 81.15km/h
+
+
+50%
+number of car :19511
+avg_time : 229.72s
+avg_speed : 22.93m/s 82.54km/h
+
+
+80%
+number of car :19504
+avg_time : 229.45s
+avg_speed : 22.93m/s 82.54km/h
+
+100%
+number of car :19342
+avg_time : 230.43s
+avg_speed : 22.75m/s 81.91km/h

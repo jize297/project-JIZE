@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    
+	<vType id="HDC" vClass="passenger" carFollowModel="Krauss" lcStrategic="0.5"
+     probability="0.5" >
+    <param key="has.ssm.device" value="true"/>
+
+    <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+    <param key="device.ssm.file" value="ssm_HDC.xml"/>
+
+
+    <param key="device.ssm.measures" value="SGAP TGAP"/>
+    <!-- 阈值要与上面 measures 顺序保持一致 -->
+    <param key="device.ssm.thresholds" value="0.2 0.5"/>
+
+    <!-- 5. 探测半径，默认 50 米 -->
+    <param key="device.ssm.range" value="10.0"/>
+
+    <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+    <param key="device.ssm.extratime" value="1.5"/>
+
+    <!-- 7. 是否输出轨迹、原始坐标、车道位置（选项：true/false） -->
+    <param key="device.ssm.trajectories" value="false"/>
+    <param key="device.ssm.geo" value="false"/>
+    <param key="device.ssm.write-positions" value="false"/>
+    <param key="device.ssm.write-lane-positions" value="false"/>
+
+    <!-- 8. （可选）只在指定路段/交叉口检测冲突 -->
+    <!-- <param key="device.ssm.filter-edges.input-file" value="edges.txt"/> -->
+
+    <!-- 9. （可选）排除某些冲突类型 只关心最危险的“后车追尾”场景，可以排除并行、交叉等类型： -->
+    <!-- <param key="device.ssm.exclude-conflict-types" value="ego"/> -->
+   
+    </vType>    
+  
+    <vType id="CAV2" vClass="passenger" speedDev="0.05"
+    carFollowModel="CACC"
+    minGap="1.5" tau="0.8" sigma="0.2"
+    accel="1.0" decel="4.5"
+    lcStrategic="0.5" lcCooperative="0.0"
+    lcSpeedGain="0.5"
+    probability="0.35">
+     <!-- 1. 启用 SSM 设备 -->
+    <param key="has.ssm.device" value="true"/>
+
+    <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+    <param key="device.ssm.file" value="ssm_CAV2.xml"/>
+
+    <!-- 3. 要计算哪些安全指标（SSM），用空格或逗号分隔 -->
+    <param key="device.ssm.measures" value="SGAP TGAP"/>
+    <!-- 阈值要与上面 measures 顺序保持一致 -->
+    <param key="device.ssm.thresholds" value="0.2 0.5"/>
+
+    <!-- 5. 探测半径，默认 50 米 -->
+    <param key="device.ssm.range" value="10.0"/>
+
+    <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+    <param key="device.ssm.extratime" value="2.0"/>
+
+    <!-- 7. 是否输出轨迹、原始坐标、车道位置（选项：true/false） -->
+    <param key="device.ssm.trajectories" value="false"/>
+    <param key="device.ssm.geo" value="false"/>
+    <param key="device.ssm.write-positions" value="false"/>
+    <param key="device.ssm.write-lane-positions" value="false"/>
+
+    <!-- 8. （可选）只在指定路段/交叉口检测冲突 -->
+    <!-- <param key="device.ssm.filter-edges.input-file" value="edges.txt"/> -->
+
+    <!-- 9. （可选）排除某些冲突类型 -->
+    <!-- <param key="device.ssm.exclude-conflict-types" value="ego"/> -->
+    </vType>
+
+     <vType id="CAV4" vClass="passenger" speedDev="0.05"
+    carFollowModel="IDM"
+    minGap="1.0" tau="0.6" sigma="0.05"
+    accel="1.8" decel="3.0"
+    lcStrategic="1.0" lcCooperative="1.0"
+    lcSpeedGain="1.0" lcPushy="0.2"
+    probability="0.15">
+    <!-- 1. 启用 SSM 设备 -->
+    <param key="has.ssm.device" value="true"/>
+
+    <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+    <param key="device.ssm.file" value="ssm_CAV4.xml"/>
+
+    <!-- 3. 要计算哪些安全指标（SSM），用空格或逗号分隔 -->
+    <param key="device.ssm.measures" value="SGAP TGAP"/>
+    <!-- 阈值要与上面 measures 顺序保持一致 -->
+    <param key="device.ssm.thresholds" value="0.2 0.5"/>
+
+    <!-- 5. 探测半径，默认 50 米 -->
+    <param key="device.ssm.range" value="10.0"/>
+
+    <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+    <param key="device.ssm.extratime" value="2.0"/>
+
+    <!-- 7. 是否输出轨迹、原始坐标、车道位置（选项：true/false） -->
+    <param key="device.ssm.trajectories" value="false"/>
+    <param key="device.ssm.geo" value="false"/>
+    <param key="device.ssm.write-positions" value="false"/>
+    <param key="device.ssm.write-lane-positions" value="false"/>
+
+    <!-- 8. （可选）只在指定路段/交叉口检测冲突 -->
+    <!-- <param key="device.ssm.filter-edges.input-file" value="edges.txt"/> -->
+
+    <!-- 9. （可选）排除某些冲突类型 -->
+    <!-- <param key="device.ssm.exclude-conflict-types" value="ego"/> -->
+    </vType>
+
+
+    <!-- Platooning 车辆类型定义（用于转换后） -->
+    <vType id="t_leader" color="yellow"/>
+    <vType id="t_follower" color="green" minGap="0.5" tau="0.5"/>
+    <vType id="t_catchup" color="red" minGap="0.5" tau="0.5"/>
+    <vType id="t_catchupFollower" color="blue" minGap="0.5" tau="0.5"/>
+
+    <!-- 分布定义 -->
+    <!-- 分布1：用于参与 platooning 的车辆（自动驾驶车辆：CAV2 和 CAV4） -->
+    <vTypeDistribution id="PKW_PLATOON" vTypes="HDC CAV2 CAV4"/>
+    <!-- 分布2：用于非 platooning HDC -->
+    <!-- <vTypeDistribution id="PKW_NONPLATOON" vTypes="HDC"/>   -->
+	
+</additional>
