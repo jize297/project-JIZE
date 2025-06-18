@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    
+    <!-- 保持HDC定义不变 -->
+    <vType id="HDC"  color ="gray" vClass="passenger" carFollowModel="Krauss" lcStrategic="0.5" probability="0">
+        <param key="has.ssm.device" value="true"/>
+        <param key="device.ssm.file" value="ssm_HDC.xml"/>
+        <param key="device.ssm.measures" value="TTC SGAP TGAP"/>
+        <param key="device.ssm.thresholds" value="0.5 0.5 0.5"/>
+        <param key="device.ssm.range" value="5.0"/>
+        <param key="device.ssm.extratime" value="0.0"/>
+    </vType>    
+  
+    <!-- 优化CAV2参数，提高换道能力 -->
+    <vType id="CAV2" vClass="passenger" speedDev="0.05"
+        carFollowModel="CACC"
+        minGap="1.5" tau="0.8" sigma="0.2"
+        accel="1.0" decel="4.5"
+        lcStrategic="0.8" lcCooperative="0.3"
+        lcSpeedGain="0.8" lcPushy="0.3"
+        probability="0.6">
+        <param key="has.ssm.device" value="true"/>
+        <param key="device.ssm.file" value="ssm_CAV2.xml"/>
+        <param key="device.ssm.measures" value="TTC SGAP TGAP"/>
+        <param key="device.ssm.thresholds" value="0.5 0.5 0.5"/>
+        <param key="device.ssm.range" value="5.0"/>
+        <param key="device.ssm.extratime" value="0.0"/>
+    </vType>
+
+    <!-- 保持CAV4参数，已经比较激进 -->
+    <vType id="CAV4" vClass="passenger" speedDev="0.05"
+        carFollowModel="CACC"
+        minGap="1.0" tau="0.6" sigma="0.05"
+        accel="1.8" decel="3.0"
+        lcStrategic="1.0" lcCooperative="1.0"
+        lcSpeedGain="1.0" lcPushy="0.2"
+        probability="0.4">
+        <param key="has.ssm.device" value="true"/>
+        <param key="device.ssm.file" value="ssm_CAV4.xml"/>
+        <param key="device.ssm.measures" value="TTC SGAP TGAP"/>
+        <param key="device.ssm.thresholds" value="0.5 0.5 0.5"/>
+        <param key="device.ssm.range" value="5.0"/>
+        <param key="device.ssm.extratime" value="0.0"/>
+    </vType>
+
+    <!-- 优化编队领车，继承原始车型的高性能参数 -->
+    <vType id="t_leader2" color="yellow"
+        carFollowModel="CACC" speedDev="0.05"
+        minGap="1.5" tau="0.8" sigma="0.2"
+        accel="1.0" decel="4.5"
+        lcStrategic="0.8" lcCooperative="0.3"
+        lcSpeedGain="0.8" lcPushy="0.3">
+        <param key="has.ssm.device" value="true"/>
+        <param key="device.ssm.file" value="ssm_leader2.xml"/>
+        <param key="device.ssm.measures" value="TTC SGAP TGAP"/>
+        <param key="device.ssm.thresholds" value="0.5 0.5 0.5"/>
+        <param key="device.ssm.range" value="5.0"/>
+        <param key="device.ssm.extratime" value="0.0"/>
+    </vType>
+
+    <vType id="t_leader4" color="orange"
+        carFollowModel="CACC" speedDev="0.05"
+        minGap="1.0" tau="0.6" sigma="0.05"
+        accel="1.8" decel="3.0"
+        lcStrategic="1.0" lcCooperative="1.0"
+        lcSpeedGain="1.0" lcPushy="0.2">
+        <param key="has.ssm.device" value="true"/>
+        <param key="device.ssm.file" value="ssm_leader4.xml"/>
+        <param key="device.ssm.measures" value="TTC SGAP TGAP"/>
+        <param key="device.ssm.thresholds" value="0.5 0.5 0.5"/>
+        <param key="device.ssm.range" value="5.0"/>
+        <param key="device.ssm.extratime" value="0.0"/>
+    </vType>
+
+    <!-- 安全优化的跟随车辆参数 -->
+    <vType id="t_follower2" color="green" 
+        carFollowModel="CACC" speedDev="0.05"
+        minGap="1.0" tau="0.7" sigma="0.15"
+        accel="1.0" decel="4.5"
+        lcStrategic="0.6" lcCooperative="0.5"
+        lcSpeedGain="0.6"/>
+        
+    <vType id="t_follower4" color="white" 
+        carFollowModel="CACC" speedDev="0.05"
+        minGap="0.8" tau="0.6" sigma="0.1"
+        accel="1.5" decel="3.5"
+        lcStrategic="0.8" lcCooperative="0.8"
+        lcSpeedGain="0.8"/>
+        
+    <vType id="t_catchup2" color="red" 
+        carFollowModel="CACC" speedDev="0.05"
+        minGap="1.2" tau="0.8" sigma="0.15"
+        accel="1.2" decel="4.2"
+        lcStrategic="0.9" lcCooperative="0.4"
+        lcSpeedGain="0.9" lcPushy="0.3"/>
+        
+    <vType id="t_catchup4" color="magenta" 
+        carFollowModel="CACC" speedDev="0.05"
+        minGap="1.0" tau="0.7" sigma="0.1"
+        accel="1.6" decel="3.2"
+        lcStrategic="0.9" lcCooperative="0.6"
+        lcSpeedGain="0.9" lcPushy="0.2"/>
+        
+    <vType id="t_catchupFollower2" color="blue" 
+        carFollowModel="CACC" speedDev="0.05"
+        minGap="1.0" tau="0.7" sigma="0.15"
+        accel="1.1" decel="4.3"
+        lcStrategic="0.7" lcCooperative="0.6"
+        lcSpeedGain="0.7"/>
+        
+    <vType id="t_catchupFollower4" color="cyan" 
+        carFollowModel="CACC" speedDev="0.05"
+        minGap="0.8" tau="0.6" sigma="0.1"
+        accel="1.5" decel="3.4"
+        lcStrategic="0.8" lcCooperative="0.8"
+        lcSpeedGain="0.8"/>
+
+    <!-- 分布定义 -->
+    <vTypeDistribution id="PKW_PLATOON" vTypes="HDC CAV2 CAV4"/>
+</additional>
