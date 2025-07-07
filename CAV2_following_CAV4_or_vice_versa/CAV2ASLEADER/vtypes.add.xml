@@ -3,60 +3,50 @@
 <additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
     
 	
-    <vType id="CAV2" vClass="passenger" speedDev="0.05"
+     <vType id="CAV2" vClass="passenger" speedDev="0.05"
         carFollowModel="CACC"
-        minGap="2.0" tau="1.0" sigma="0.2"
-        accel="2.8" decel="6.5"
-        lcStrategic="0.7" lcCooperative="0.0"
-        lcSpeedGain="0.5"
+        minGap="1.0" tau="0.6" sigma="0.05"
+        accel="2.0" decel="3.0"
+        lcStrategic="0.8" lcCooperative="1.0"
+        lcSpeedGain="1.0" lcPushy="0.2"
         probability="0.6">
+        <param key="has.ssm.device" value="true"/>
         <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
-    <param key="device.ssm.file" value="ssm_CAV2.xml"/>
+        <param key="device.ssm.file" value="ssm_CAV2.xml"/>
 
 
-    <param key="device.ssm.measures" value="SGAP TGAP TTC"/>
-    <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
-    <param key="device.ssm.thresholds" value="0.2 0.5 1.5"/>
+        <param key="device.ssm.measures" value="TTC"/>
+        <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
+        <param key="device.ssm.thresholds" value="0.5"/>
 
-    <!-- 5. 探测半径，默认 50 米 -->
-    <param key="device.ssm.range" value="10.0"/>
+        <!-- 5. 探测半径，默认 50 米 -->
+        <param key="device.ssm.range" value="20.0"/>
 
-    <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
-    <param key="device.ssm.extratime" value="2"/>
-
-    <!-- 7. 是否输出轨迹、原始坐标、车道位置（选项：true/false） -->
-    <param key="device.ssm.trajectories" value="false"/>
-    <param key="device.ssm.geo" value="false"/>
-    <param key="device.ssm.write-positions" value="false"/>
-    <param key="device.ssm.write-lane-positions" value="false"/>
+        <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+        <param key="device.ssm.extratime" value="0"/>
     </vType>
 
     <vType id="CAV4" vClass="passenger" speedDev="0.05"
         carFollowModel="CACC"
-        minGap="1.2" tau="0.7" sigma="0.05"
-        accel="1.5" decel="5.0"
+        minGap="1.0" tau="0.6" sigma="0.05"
+        accel="2.0" decel="3.0"
         lcStrategic="0.8" lcCooperative="1.0"
         lcSpeedGain="1.0" lcPushy="0.2"
         probability="0.4">
+        <param key="has.ssm.device" value="true"/>
         <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
-    <param key="device.ssm.file" value="ssm_CAV4.xml"/>
+        <param key="device.ssm.file" value="ssm_CAV4.xml"/>
 
 
-    <param key="device.ssm.measures" value="SGAP TGAP TTC"/>
-    <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
-    <param key="device.ssm.thresholds" value="0.2 0.5 1.5"/>
+        <param key="device.ssm.measures" value="TTC"/>
+        <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
+        <param key="device.ssm.thresholds" value="0.5"/>
 
-    <!-- 5. 探测半径，默认 50 米 -->
-    <param key="device.ssm.range" value="10.0"/>
+        <!-- 5. 探测半径，默认 50 米 -->
+        <param key="device.ssm.range" value="20.0"/>
 
-    <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
-    <param key="device.ssm.extratime" value="2"/>
-
-    <!-- 7. 是否输出轨迹、原始坐标、车道位置（选项：true/false） -->
-    <param key="device.ssm.trajectories" value="false"/>
-    <param key="device.ssm.geo" value="false"/>
-    <param key="device.ssm.write-positions" value="false"/>
-    <param key="device.ssm.write-lane-positions" value="false"/>
+        <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+        <param key="device.ssm.extratime" value="0"/>
     </vType>
 
 
