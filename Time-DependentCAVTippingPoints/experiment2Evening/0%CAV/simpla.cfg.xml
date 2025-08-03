@@ -1,0 +1,35 @@
+<configuration>
+    <vTypeMap original="CAV2"
+            leader="t_leader"
+            follower="t_follower"
+            catchup="t_catchup"
+            catchupFollower="t_catchupFollower" />
+
+    <vTypeMap original="CAV4"
+            leader="t_leader"
+            follower="t_follower"
+            catchup="t_catchup"
+            catchupFollower="t_catchupFollower" />
+    
+    
+    <vehicleSelectors></vehicleSelectors> 
+    <verbosity value="4" />
+    <controlRate value="1" />
+    
+    <!-- 优化编队参数 -->
+    <maxPlatoonGap value="15" />  <!-- 减小最大编队间距，提高编队效率 -->
+    <catchupDist value="80" />    <!-- 适当减小追赶距离，更快形成编队 -->
+    <useHeadway value="true" />   <!-- 启用车头时距控制，提高编队稳定性 -->
+    
+    <switchImpatienceFactor value="-1" />
+    <platoonSplitTime value="2" />  <!-- 减少分裂时间，提高编队灵活性 -->
+    
+    <!-- 优化换道模式 -->
+    <lcMode original="594" leader="1621" follower="1621" catchupFollower="1621" />
+    
+    <!-- 关键优化：提高编队车辆速度因子 -->
+    <speedFactor original="-1" leader="1.0" follower="1.3" catchup="1.15"/>
+    
+    <!-- 适当增加编队最大车辆数 -->
+    <maxVehicles value="6"/>
+</configuration>
