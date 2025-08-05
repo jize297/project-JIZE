@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+    
+    <input>
+        <net-file value="M50network.net.xml"/>
+        <additional-files value="edgesData.add.xml,vtypes.add.xml,M50_routes.rou.xml,M50_emitters.emi.xml,M50_detectors.poi.xml"/>
+        <tripinfo-output value="tripinfo.xml"/>
+        <emission-output value="emission.xml"/>
+    </input>
+
+    <!-- <output>
+        <collision-output value="collisions.xml"/>
+        <summary-output value="summary.xml"/>
+    </output> -->
+
+    <time>
+        <begin value="25200"/> <!-- 7:00 -->
+        <end   value="27000"/>  <!-- 8:00 -->
+    </time>
+
+    <processing>
+        <emergencydecel.warning-threshold value="5"/>
+        <collision.mingap-factor value="0"/>
+        <!-- 只使用确实存在的参数 -->
+        <collision.action value="warn"/>
+        <collision.check-junctions value="true"/>
+        <time-to-teleport value="300"/>
+        <time-to-teleport.highways value="0"/>
+        <max-depart-delay value="600"/>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <!-- 报告选项 -->
+    <report>
+        <verbose value="true"/>
+        <log value="simulation.log"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="false"/>
+    </report>
+
+</configuration>

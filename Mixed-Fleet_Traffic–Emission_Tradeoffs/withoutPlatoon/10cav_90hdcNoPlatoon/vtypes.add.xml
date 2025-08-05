@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- =========  汇总 vType 定义  =========== -->
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+        <!-- HDC – Petrol -->
+        <vType id="HDC_Petrol" vClass="passenger"
+                emissionClass="HBEFA3/PC_G_EU6"
+                carFollowModel="Krauss"
+                probability="0.27">
+                <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+                <param key="has.ssm.device" value="true"/>
+                <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+                <param key="device.ssm.file" value="ssm_HDC_Petrol.xml"/>
+
+
+                <param key="device.ssm.measures" value="TTC"/>
+                <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
+                <param key="device.ssm.thresholds" value="0.5"/>
+
+                <!-- 5. 探测半径，默认 50 米 -->
+                <param key="device.ssm.range" value="20.0"/>
+
+                <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+                <param key="device.ssm.extratime" value="0"/>
+        </vType>
+        <!-- HDC – Diesel -->
+        <vType id="HDC_Diesel" vClass="passenger"
+                emissionClass="HBEFA3/PC_D_EU6"
+                carFollowModel="Krauss"
+                probability="0.27">
+                <param key="has.ssm.device" value="true"/>
+                <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+                <param key="device.ssm.file" value="ssm_HDC_Diesel.xml"/>
+
+
+                <param key="device.ssm.measures" value="TTC"/>
+                <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
+                <param key="device.ssm.thresholds" value="0.5"/>
+
+                <!-- 5. 探测半径，默认 50 米 -->
+                <param key="device.ssm.range" value="20.0"/>
+
+                <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+                <param key="device.ssm.extratime" value="0"/>
+        </vType>
+        <!-- HDC – BEV -->
+        <vType id="HDC_BEV" vClass="passenger"
+                carFollowModel="Krauss"
+                probability="0.36">
+        <!-- enable battery & charging -->
+        <param key="has.battery.device" value="true"/>
+        <param key="device.battery.capacity"     value="65000000"/>  <!-- Wh = 65 kWh -->
+        <param key="device.battery.maximumPower" value="130000"/>    <!-- W = 130 kW -->
+        <param key="has.stationfinder.device" value="true"/>
+        <param key="device.stationfinder.rescueTime"  value="60"/>
+        <param key="device.stationfinder.acceptSlopes" value="true"/>
+                <param key="has.ssm.device" value="true"/>
+                <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+                <param key="device.ssm.file" value="ssm_HDC_BEV.xml"/>
+
+
+                <param key="device.ssm.measures" value="TTC"/>
+                <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
+                <param key="device.ssm.thresholds" value="0.5"/>
+
+                <!-- 5. 探测半径，默认 50 米 -->
+                <param key="device.ssm.range" value="20.0"/>
+
+                <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+                <param key="device.ssm.extratime" value="0"/>
+        </vType>
+   
+
+
+
+
+
+
+        <vType id="CAV4_Petrol" vClass="passenger"
+                emissionClass="HBEFA3/PC_G_EU6"
+                speedDev="0.05"
+                carFollowModel="CACC"
+                minGap="1.0" tau="0.6" sigma="0.05"
+                accel="2.0" decel="3.0"
+                lcStrategic="0.8" lcCooperative="1.0"
+                lcSpeedGain="1.0" lcPushy="0.2" probability="0.03">
+                <param key="has.ssm.device" value="true"/>
+                <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+                <param key="device.ssm.file" value="ssm_CAV4_Petrol.xml"/>
+
+
+                <param key="device.ssm.measures" value="TTC"/>
+                <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
+                <param key="device.ssm.thresholds" value="0.5"/>
+
+                <!-- 5. 探测半径，默认 50 米 -->
+                <param key="device.ssm.range" value="20.0"/>
+
+                <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+                <param key="device.ssm.extratime" value="0"/>
+        </vType>
+
+        <vType id="CAV4_Diesel" vClass="passenger"
+                emissionClass="HBEFA3/PC_D_EU6"
+                speedDev="0.05"
+                carFollowModel="CACC"
+                minGap="1.0" tau="0.6" sigma="0.05"
+                accel="2.0" decel="3.0"
+                lcStrategic="0.8" lcCooperative="1.0"
+                lcSpeedGain="1.0" lcPushy="0.2" probability="0.03">
+                <param key="has.ssm.device" value="true"/>
+                <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+                <param key="device.ssm.file" value="ssm_CAV4_Diesel.xml"/>
+
+
+                <param key="device.ssm.measures" value="TTC"/>
+                <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
+                <param key="device.ssm.thresholds" value="0.5"/>
+
+                <!-- 5. 探测半径，默认 50 米 -->
+                <param key="device.ssm.range" value="20.0"/>
+
+                <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+                <param key="device.ssm.extratime" value="0"/>
+        </vType>
+
+        <vType id="CAV4_BEV" vClass="passenger"
+                speedDev="0.05"
+                carFollowModel="CACC"
+                minGap="1.0" tau="0.6" sigma="0.05"
+                accel="2.0" decel="3.0"
+                lcStrategic="0.8" lcCooperative="1.0"
+                lcSpeedGain="1.0" lcPushy="0.2" probability="0.04">
+                <!-- 可选：启用电池能耗模型（SUMO ≥1.13） -->
+                <param key="has.battery.device" value="true"/>
+                <param key="device.battery.capacity" value="65000000"/>    <!-- kWh -->
+                <param key="device.battery.maximumPower" value="130000"/> <!-- kW -->
+                <param key="has.stationfinder.device" value="true"/>
+                <param key="device.stationfinder.rescueTime"  value="60"/>
+                <param key="device.stationfinder.acceptSlopes" value="true"/>
+                <param key="has.ssm.device" value="true"/>
+                <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
+                <param key="device.ssm.file" value="ssm_CAV4_BEV.xml"/>
+
+
+                <param key="device.ssm.measures" value="TTC"/>
+                <!-- 阈值顺序对应上面三项：SGAP=0.2m, TGAP=0.5s, TTC=1.5s -->
+                <param key="device.ssm.thresholds" value="0.5"/>
+
+                <!-- 5. 探测半径，默认 50 米 -->
+                <param key="device.ssm.range" value="20.0"/>
+
+                <!-- 6. 冲突结束后继续跟踪的额外时间，默认 5 秒 -->
+                <param key="device.ssm.extratime" value="0"/>
+        </vType>
+
+
+         <!-- Platooning 车辆类型定义（用于转换后） -->
+        <vType id="t_leader" color="yellow"/>
+        <vType id="t_follower" color="green" minGap="0.4" tau="0.4"/>
+        <vType id="t_catchup" color="red" minGap="0.4" tau="0.4"/>
+        <vType id="t_catchupFollower" color="blue" minGap="0.4" tau="0.4"/>
+        <!-- === ⑤ 车队分布场景  ================== -->
+
+
+ 
+
+    <vTypeDistribution id="PKW_PLATOON" vTypes="HDC_Petrol HDC_Diesel HDC_BEV CAV4_Petrol CAV4_Diesel CAV4_BEV"/>
+</additional>
