@@ -9,7 +9,7 @@
         accel="2.0" decel="3.0"
         lcStrategic="0.8" lcCooperative="1.0"
         lcSpeedGain="1.0" lcPushy="0.2"
-        probability="0.6">
+        probability="0.5">
         <param key="has.ssm.device" value="true"/>
         <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
         <param key="device.ssm.file" value="ssm_CAV2.xml"/>
@@ -32,7 +32,7 @@
         accel="2.0" decel="3.0"
         lcStrategic="0.8" lcCooperative="1.0"
         lcSpeedGain="1.0" lcPushy="0.2"
-        probability="0.4">
+        probability="0.5">
         <param key="has.ssm.device" value="true"/>
         <!-- 2. 指定该类型车辆的输出文件（可按需改名） -->
         <param key="device.ssm.file" value="ssm_CAV4.xml"/>
